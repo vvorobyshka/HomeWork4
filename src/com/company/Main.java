@@ -12,5 +12,8 @@ public class Main {
         rectangle1.printArea();
         rectangle2.printRectangleKind();
 
+        Rectangle.printClassName(true);
+        Rectangle.printRectanglesCount();
+
     }
 }

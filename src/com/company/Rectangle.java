@@ -1,17 +1,23 @@
 package com.company;
 
 public class Rectangle {
+    private final static String RUSSIAN_CLASS_NAME = "прямоугольник";
+    private final static String ENGLISH_CLASS_NAME = "rectangle";
     private double x;
     private double y;
+    public static int createdRectangles;
+
 
     public Rectangle(double x, double y) {
         this.x = x;
         this.y = y;
+        createdRectangles++;
     }
 
     public Rectangle(double x) {
         this.x = x;
         this.y = x;
+        createdRectangles++;
     }
 
     public double calculateArea() {
@@ -24,7 +30,7 @@ public class Rectangle {
     }
 
     public void printRectangleKind() {
-        if (x!=y) {
+        if (x != y) {
             System.out.println("Это прямоугольник");
         } else {
             System.out.println("Это квадрат");
@@ -39,9 +45,19 @@ public class Rectangle {
             System.out.println("Прямоугольники не равны");
             return false;
         }
-
     }
 
+    public static void printRectanglesCount() {
+        System.out.println("Всего было создано: " + createdRectangles + " прямоугольников");
+    }
+
+    public static void printClassName(boolean printInRussian) {
+        if (printInRussian) {
+            System.out.println(RUSSIAN_CLASS_NAME);
+        } else {
+            System.out.println(ENGLISH_CLASS_NAME);
+        }
+    }
 
 
 }
